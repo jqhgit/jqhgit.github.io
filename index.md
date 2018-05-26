@@ -6,7 +6,7 @@ You can use the [editor on GitHub](https://github.com/jqhgit/jqhgit.github.io/ed
 [linktotest](./test.md)
 ### Markdown
 
-- [1] check demo 1
+- [ ] check demo 1
 - [ ] check demo 2
 - [ ] check demo 3
 
