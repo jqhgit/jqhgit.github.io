@@ -6,9 +6,15 @@ You can use the [editor on GitHub](https://github.com/jqhgit/jqhgit.github.io/ed
 [linktotest](./test.md)
 ### Markdown
 
-- [1] check demo 1
+- [ ] check demo 1
 - [ ] check demo 2
 - [ ] check demo 3
+
+###table demo
+head1 | head2
+______|______
+  a   |   b  
+  c   |   d
 
 Markdown is
 >a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
