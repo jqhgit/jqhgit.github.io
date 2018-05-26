@@ -13,7 +13,7 @@ You can use the [editor on GitHub](https://github.com/jqhgit/jqhgit.github.io/ed
 ###table demo
 
 head1 | head2
-______|______
+------|------
   a   |   b  
   c   |   d
 
