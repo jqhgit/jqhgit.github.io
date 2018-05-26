@@ -1,12 +1,1 @@
-var express = require('express');
-app.get('/jqhgit.github.io', function(req, res) {
-    var dataStr = (new Date()).valueOf();
-    //重定向到认证接口,并配置参数
-    //注意这里使用的是node的https模块发起的请求
-    var path = "https://github.com/login/OAuth/authorize";
-    path += '?client_id=7b17661d6fd03752e84a';
-    path += '&scope=b535dc46d7e98458b7e372f5e3a6258846b845c4';
-    path += '&state='+ dataStr;
-    //转发到授权服务器
-    res.redirect(path);
-});
+
