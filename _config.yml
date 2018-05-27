@@ -2,7 +2,9 @@ theme: jekyll-theme-cayman
 title: jqhgit's foot print
 
 #gitment
-#gitment:
-#  id: 7b17661d6fd03752e84a
-#  secret: b535dc46d7e98458b7e372f5e3a6258846b845c4
+gitment:
+       owner: 'jqhgit' #your github ID
+       repo: 'issues' #the repo to store comments
+       client_id: '7b17661d6fd03752e84a' #your client ID
+       client_secret: 'b535dc46d7e98458b7e372f5e3a6258846b845c4' #your client
   
