@@ -24,11 +24,11 @@
     </script>-->
     <script>
      var _gitment = new Gitment({ 
-      owner: {% site.gitment.owner %},
-      repo: {% site.gitment.repo %},
+      owner: {%= site.gitment.owner %},
+      repo: {%= site.gitment.repo %},
       oauth: {
-      client_id: {% site.gitment.client_id %},
-      client_secret: {% site.gitment.client_secret %},
+      client_id: {%= site.gitment.client_id %},
+      client_secret: {%= site.gitment.client_secret %},
       },
      });
      _gitment.render('gitmentContainer');
