@@ -1,4 +1,6 @@
-<div>
+<table>
+    <tr><td>1</td><td>2</td><td>3</td></tr>
+</table>
 <div id="gitmentContainer"></div>
   <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
    <script src="https://billts.site/js/gitment.js"></script>
@@ -13,5 +15,4 @@
         });
         gitment.render('gitmentContainer');
 </script>  
- </div>
   
