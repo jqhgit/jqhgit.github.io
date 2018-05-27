@@ -5,34 +5,12 @@
   </head>
 
   <body>
-    <div id="gitmentContainer"></div>
+   <div id="gitmentContainer"></div>
    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
    <script src="https://billts.site/js/gitment.js"></script>
    <!-- <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
-    <script>
-        var _gitment = new Gitment({ 
-         id: "https://jqhgit.github.io/test2",
-         owner: 'jqhgit',
-         repo: 'issues',
-         oauth: {
-         client_id: '7b17661d6fd03752e84a',
-         client_secret: 'b535dc46d7e98458b7e372f5e3a6258846b845c4',
-         },
-        });
-        _gitment.render('gitmentContainer');
-    </script>
-    <!--<script>
-     var _gitment = new Gitment({ 
-      owner: {%= site.gitment.owner %},
-      repo: {%= site.gitment.repo %},
-      oauth: {
-      client_id: {%= site.gitment.client_id %},
-      client_secret: {%= site.gitment.client_secret %},
-      },
-     });
-     _gitment.render('gitmentContainer');
-    </script>-->
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
+   <script src="./gitment.js"></script>
   </body>
 
 </html>
