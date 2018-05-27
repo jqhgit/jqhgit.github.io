@@ -1,6 +1,7 @@
 # Welcome to GitHub Pages
 
 [go to comment test page](./test)
+[go to comment test page 2(md)](./test2)
 
 You can use the [editor on GitHub](https://github.com/jqhgit/jqhgit.github.io/edit/master/index.md) to maintain and preview the content for your website in **Markdown* *files*.
 
