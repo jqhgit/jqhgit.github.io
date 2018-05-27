@@ -1,6 +1,6 @@
-<a>
+<div>
 <div id="gitmentContainer"></div>
-   <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+  <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
    <script src="https://billts.site/js/gitment.js"></script>
     <script>
         var gitment = new Gitment({
@@ -12,5 +12,6 @@
         },
         });
         gitment.render('gitmentContainer');
-</script>
-</a>
+</script>  
+ </div>
+  
