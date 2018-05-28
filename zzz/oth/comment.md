@@ -73,8 +73,7 @@ github pages + gitment实现页面评论
  
    1.gitment实现
    
-   由于github md为了安全不支持 `<script>` 标签，但是gitment需要使用，所以最好把gitment相关的内容放在js或者html的页面内，github md是支持       html标签的 -.- 
-   然后在你需要做评论的html页面的 `<body>` 内部添加如下的代码:
+   然后在你需要做评论页面的最下端部分添加如下的代码:
     
     ```
     <div id="gitmentContainer"></div>
