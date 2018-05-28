@@ -14,7 +14,8 @@ github pages + gitment实现页面评论
 #### 准备工作 
  + 新建自己的仓库，设置github pages: 
  
-   1. 新建repository的时候注意，命名尽量和自己的github用户名一致,采用 \[username.github.io\]，比如![img](https://jqhgit.github.io/res/zzz/oth/name.png)
+   1. 新建repository的时候注意，命名尽量和自己的github用户名一致,采用 \[username.github.io\]，比如
+      > ![img](https://jqhgit.github.io/res/zzz/oth/name.png)
     
    2. 创建github pages,点开刚刚新建的工程的 \[Settings\]：
     
