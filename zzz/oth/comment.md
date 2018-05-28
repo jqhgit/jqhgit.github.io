@@ -18,29 +18,29 @@ github pages + gitment实现页面评论
     
    2. 创建github pages,点开刚刚新建的工程的 \[Settings\]：
     
-      ![settings](https://jqhgit.github.io/res/zzz/oth/reposetting.png)
+      > ![settings](https://jqhgit.github.io/res/zzz/oth/reposetting.png)
       
    3. 然后选择点击 \[Select theme\] 选择一个你喜欢的风格
     
-      ![choosetheme](https://jqhgit.github.io/res/zzz/oth/choosetheme.png)
+      > ![choosetheme](https://jqhgit.github.io/res/zzz/oth/choosetheme.png)
       
       然后继续点击 \[Select theme\],然后你的主页就创建好了
       
-      ![selecttheme](https://jqhgit.github.io/res/zzz/oth/reposelecttheme.png)
+      > ![selecttheme](https://jqhgit.github.io/res/zzz/oth/reposelecttheme.png)
       
  + 注册oauth app： 
  
    1. 点自己头像然后选择 \[Settings\]:
     
-     ![settings2](https://jqhgit.github.io/res/zzz/oth/gitsettings.png)
+     > ![settings2](https://jqhgit.github.io/res/zzz/oth/gitsettings.png)
       
    2. 选择页面左边靠下的 \[Developer settings\]: 
     
-     ![developer settings](https://jqhgit.github.io/res/zzz/oth/developersettings.png)
+     > ![developer settings](https://jqhgit.github.io/res/zzz/oth/developersettings.png)
       
    3. 选择如图的 \[Register a new application\]:
     
-     ![Register new app](https://jqhgit.github.io/res/zzz/oth/registeroauth.png) 
+     > ![Register new app](https://jqhgit.github.io/res/zzz/oth/registeroauth.png) 
       
  + 然后填写注册的内容:
    
