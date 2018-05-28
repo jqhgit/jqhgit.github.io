@@ -30,13 +30,14 @@ title: "github pages + gitment实现页面评论"
    - 然后填写注册的内容:
       ![Register](https://jqhgit.github.com/res/zzz/oth/registeroauth2.png)
       
-      Application name:随意发挥；
-      Homepage URL:填写你当前的repository的路径，注意仓库名和用户名不同的时候可能路径长一些 -.-
-      Authorization callback URL这个很关键，在你自己的页面请求授权的时候，oauth app为了安全性会固定回调指定这个页面，
-      这个地方经过n次试验一定要填写**仓库根路径**，配合gitment在你多个页面都需要评论时均能够准确授权成功；
+      **Application name**:随意发挥；
+      **Homepage URL**:填写你当前的repository的路径，注意仓库名和用户名不同的时候可能路径长一些 -.-
+      **Authorization callback URL**这个很关键，在你自己的页面请求授权的时候，oauth app为了安全性会固定回调指定这个页面，
+      你可以填写**仓库根路径**，配合gitment,在你多个页面都需要评论时，授权完成能够正确跳转；
       另外这些填错了后面也可以改，很方便，不用太担心 0.0
       成功后会有如图的结果，重要的信息就是Client ID和Client Secret，这是你在gitment请求授权的时候需要配置的。
       ![register finish](https://jqhgit.github.com/res/zzz/oth/oauthapp.png)
+      
       ok！后面可以开始在实际网页中借助gitment配置你需要评论的页面了。
       
    - 建一个专门放issues的仓库 \[可选\] 
@@ -46,23 +47,23 @@ title: "github pages + gitment实现页面评论"
  + 配置gitment
   - 添加gitment代码段
     -  由于github md为了安全不支持`<script>`标签，但是gitment需要使用，所以最好把gitment相关的内容放在js或者html的页面内，github md是支持       html标签 的 -.- 然后在你需要做评论的html页面里面的`<body>`可以添加如下的代码:
-```
-<div id="gitmentContainer"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-var gitment = new Gitment(
-{ 
-  id: 'page name or date'
-  owner: 'jqhgit',
-  repo: 'issues',
-  oauth: 
-  {
-    client_id: '7bxxx84a',
-    client_secret: 'b5xxxxxxx5c4',
-  },
-});
-gitment.render('gitmentContainer');
-``` 
+    ```
+    <div id="gitmentContainer"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    var gitment = new Gitment(
+    { 
+      id: 'page name or date'
+      owner: 'jqhgit',
+      repo: 'issues',
+      oauth: 
+      {
+        client_id: '7bxxx84a',
+        client_secret: 'b5xxxxxxx5c4',
+      },
+    });
+    gitment.render('gitmentContainer');
+    ``` 
     - 注意
     id: 是当前页面对应生成issues的名称，缺省状态下是使用当前页面的\[title\]名也就是page.title
     owner: 填写你的user name就行
@@ -71,10 +72,10 @@ gitment.render('gitmentContainer');
         
     - 汉化
     上面这个是英文的评论，如果需要中文的话，可以把`<link> <script>`标签替换为:
-     ```html
-<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-<script src="https://billts.site/js/gitment.js"></script>     
-     ```
+    ```
+    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+    <script src="https://billts.site/js/gitment.js"></script>     
+    ```
     到这一步完成，你可以试验性访问你自己的页面了,进行测试了，你需要先点击右侧登录，登录你的github账号，然后初始化这篇文章的评论（实际就是在你的issues指定仓库创建一个issue用于提交评论）。
   
  ###评论踩坑:joy:
@@ -83,8 +84,10 @@ gitment.render('gitmentContainer');
       
       点击登录，填入你的github，如果顺利出现下图，表示你很幸运，基本没出问题-.-
       ![prepare](https://jqhgit.github.com/res/zzz/oth/prepare.png)
+      
       - 如果登录过程中出现未找到(Error:Not Found)
         那可能是你的woner或者repo配置错了，请确保你的repo存在且填写的是正确的仓库名（只需要填写仓库名）
+        
       - 登录过程结束后跳到别的页面了,或者仍提示未初始化(Error:Comments Not Initialized)
         请检查oauth app的 Authorization callback URL设置的是否正确
         
