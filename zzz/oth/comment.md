@@ -116,11 +116,11 @@ github pages + gitment实现页面评论
  ------------------
  + 打开你的页面能看到如下图所示(这个是中文的，英文的是Comments Not Initialized)  
     
-       > ![notinit](https://jqhgit.github.io/res/zzz/oth/notinit.png)
+      > ![notinit](https://jqhgit.github.io/res/zzz/oth/notinit.png)
       
    点击登录，填入你的github，如果顺利出现下图，表示你很幸运，基本没出问题-.-
       
-       > ![prepare](https://jqhgit.github.io/res/zzz/oth/prepare.png)
+      > ![prepare](https://jqhgit.github.io/res/zzz/oth/prepare.png)
       
    1. 如果登录过程中出现未找到(Error:Not Found)
         那可能是你的owner或者repo配置错了，请确保你的repo存在且填写的是正确的仓库名（只需要填写仓库名）
