@@ -113,7 +113,7 @@ github pages + gitment实现页面评论
   
  三、 评论踩坑( :joy: ) 
  ------------------
- + 如果打开你的页面能看到如下内容(这个是中文的，英文的是Comments Not Initialized)  
+ + 打开你的页面能看到如下图所示(这个是中文的，英文的是Comments Not Initialized)  
     
    ![notinit](https://jqhgit.github.io/res/zzz/oth/notinit.png)
       
