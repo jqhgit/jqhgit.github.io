@@ -29,7 +29,7 @@ github pages + gitment实现页面评论
       
    2. 选择页面左边靠下的 \[Developer settings\]: 
     
-     ![developer settings]("https://jqhgit.github.io/res/zzz/oth/developer settings.png")
+     ![developer settings](https://jqhgit.github.io/res/zzz/oth/developersettings.png)
       
    3. 选择如图的 \[Register a new application\]:
     
