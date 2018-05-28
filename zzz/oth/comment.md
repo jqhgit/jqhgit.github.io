@@ -111,7 +111,7 @@ github pages + gitment实现页面评论
     ```
    到这一步完成，你可以试验性访问你自己的页面了,进行测试了，你需要先点击右侧登录，登录你的github账号，然后初始化这篇文章的评论（实际就是在你的issues指定仓库创建一个issue用于提交评论）。
   
- 三、 评论踩坑 :joy: 
+ 三、 评论踩坑( :joy: ) 
  ------------------
  + 如果打开你的页面能看到如下内容(这个是中文的，英文的是Comments Not Initialized)  
     
@@ -122,7 +122,7 @@ github pages + gitment实现页面评论
    ![prepare](https://jqhgit.github.io/res/zzz/oth/prepare.png)
       
    1. 如果登录过程中出现未找到(Error:Not Found)
-        那可能是你的woner或者repo配置错了，请确保你的repo存在且填写的是正确的仓库名（只需要填写仓库名）
+        那可能是你的owner或者repo配置错了，请确保你的repo存在且填写的是正确的仓库名（只需要填写仓库名）
         
    2. 登录过程结束后跳到别的页面了,或者仍提示未初始化(Error:Comments Not Initialized)
         请检查oauth app的 Authorization callback URL设置的是否正确
