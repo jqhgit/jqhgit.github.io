@@ -11,33 +11,33 @@ github pages + gitment实现页面评论
 ---------------
 #### 准备工作 
  + 新建自己的仓库，设置github pages: 
-   1. 新建repository的时候注意，命名尽量和自己的github用户名一致,采用 \[username.github.io\]，比如![img](https://jqhgit.github.com/res/zzz/oth/name.png)
+   1. 新建repository的时候注意，命名尽量和自己的github用户名一致,采用 \[username.github.io\]，比如![img](https://jqhgit.github.io/res/zzz/oth/name.png)
     
    2. 创建github pages,点开刚刚新建的工程的 \[Settings\]：
     
-      ![settings](https://jqhgit.github.com/res/zzz/oth/reposetting.png)
+      ![settings](https://jqhgit.github.io/res/zzz/oth/reposetting.png)
       
    3. 然后选择点击 \[Select theme\] 选择一个你喜欢的风格然后继续点击 \[Select theme\],然后你的主页就创建好了
     
-      ![choosetheme](https://jqhgit.github.com/res/zzz/oth/choosetheme.png)
-      ![selecttheme](https://jqhgit.github.com/res/zzz/oth/reposelecttheme.png)
+      ![choosetheme](https://jqhgit.github.io/res/zzz/oth/choosetheme.png)
+      ![selecttheme](https://jqhgit.github.io/res/zzz/oth/reposelecttheme.png)
       
  + 注册oauth app： 
    1. 点自己头像然后选择 \[Settings\]:
     
-     ![settings2](https://jqhgit.github.com/res/zzz/oth/gitsettings.png)
+     ![settings2](https://jqhgit.github.io/res/zzz/oth/gitsettings.png)
       
    2. 选择页面左边靠下的 \[Developer settings\]: 
     
-     ![developer settings](https://jqhgit.github.com/res/zzz/oth/developer settings.png)
+     ![developer settings]("https://jqhgit.github.io/res/zzz/oth/developer settings.png")
       
    3. 选择如图的 \[Register a new application\]:
     
-     ![Register new app](https://jqhgit.github.com/res/zzz/oth/registeroauth.png) 
+     ![Register new app](https://jqhgit.github.io/res/zzz/oth/registeroauth.png) 
       
  + 然后填写注册的内容:
    
-   ![Register](https://jqhgit.github.com/res/zzz/oth/registeroauth2.png)
+   ![Register](https://jqhgit.github.io/res/zzz/oth/registeroauth2.png)
       
    1. **Application name**：随意发挥；
    2. **Homepage URL**：
@@ -47,7 +47,7 @@ github pages + gitment实现页面评论
       
    * 另外这些填错了后面也可以改，很方便，不用太担心（-.-），成功后会有如图的结果，重要的信息就是Client ID和Client Secret，这是你在gitment请求授权的时候需要配置的。
       
-   ![register finish](https://jqhgit.github.com/res/zzz/oth/oauthapp.png)
+   ![register finish](https://jqhgit.github.io/res/zzz/oth/oauthapp.png)
       
    ok！后面可以开始在实际网页中借助gitment配置你需要评论的页面了。
       
@@ -101,11 +101,11 @@ github pages + gitment实现页面评论
  ------------------
  + 如果打开你的页面能看到如下内容(这个是中文的，英文的是Comments Not Initialized)  
     
-   ![notinit](https://jqhgit.github.com/res/zzz/oth/notinit.png)
+   ![notinit](https://jqhgit.github.io/res/zzz/oth/notinit.png)
       
    点击登录，填入你的github，如果顺利出现下图，表示你很幸运，基本没出问题-.-
       
-   ![prepare](https://jqhgit.github.com/res/zzz/oth/prepare.png)
+   ![prepare](https://jqhgit.github.io/res/zzz/oth/prepare.png)
       
    1. 如果登录过程中出现未找到(Error:Not Found)
         那可能是你的woner或者repo配置错了，请确保你的repo存在且填写的是正确的仓库名（只需要填写仓库名）
