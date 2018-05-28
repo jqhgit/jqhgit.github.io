@@ -1,5 +1,7 @@
 # Welcome to GitHub Pages
 
+[github pages + gitment实现页面评论](https://jqhgit.github.io/zzz/oth/comment)
+
 [go to comment test page](./test)
 
 [go to comment test page 2](./test2)
