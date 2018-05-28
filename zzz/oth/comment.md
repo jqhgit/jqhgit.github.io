@@ -2,12 +2,9 @@ title: "github pages + gitment实现页面评论"
 
 ### 说在前面的话 
   + gitment 使用github的oauth app协助认证授权，只允许github登录用户评论 ,评论支持github flavored markdown；
+  + gitment 采用github issues作为评论，这个有些人认可有些人不认可觉得滥用了，见仁见智吧 -.-
   + 本文旨在记录踩坑史...为像我这样github新手提供点帮助，老手请自觉忽略本文 -.- 
-  
-### 传送门
-+ [github flavored markdown 语法传送门](https://guides.github.com/features/mastering-markdown?_blank)
-
- 
+   
 ### 实现过程
  + 准备工作 
    1. 新建自己的仓库，设置github pages: 
@@ -36,9 +33,62 @@ title: "github pages + gitment实现页面评论"
       ![register finish](https://jqhgit.github.com/res/zzz/oth/oauthapp.png)
       ok！后面可以开始在实际网页中借助gitment配置你需要评论的页面了。
       
-   3. 开始配置gitment:
+   3. 建一个专门放issues的仓库 \[可选\] 
+   * 因为gitment会采用github issues来作为评论，所以需要一个存放issues的repo，
+     参照第一步，建一个空的仓库就行，命名可以随意，比如issues :joy:,这个是用来存放评论issues的。
       
-      
+ + 配置gitment
+  1. 添加gitment代码段
+    *  由于github md为了安全不支持`<script>`标签，但是gitment需要使用，所以最好把gitment相关的内容放在js或者html的页面内，github md是支持       html标签 的 -.- 然后在你需要做评论的html页面里面的`<body>`可以添加如下的代码:
+    ```html
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+var gitment = new Gitment(
+{ 
+  id: 'page name or date'
+  owner: 'jqhgit',
+  repo: 'issues',
+  oauth: 
+  {
+    client_id: '7bxxx84a',
+    client_secret: 'b5xxxxxxx5c4',
+  },
+});
+gitment.render('gitmentContainer');
+     ``` 
+    * 注意
+    id: 是当前页面对应生成issues的名称，缺省状态下是使用当前页面的\[title\]名也就是page.title
+    owner: 填写你的user name就行
+    repo: 是存放评论issues的仓库，只需要写**仓库名**,不需要前面的引导串，这个也比较重要
+    client_id client_secret: 用你在第2步最后生成的oauth的id和secret就行，不熟悉html，不知道这个地方怎么避免id secret泄漏-.-。
+        
+    另外上面这个是英文的评论，如果需要中文的话，可以把`<link> <script>`标签替换为:
+     ```html
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>     
+     ```
+    到这一步完成，你可以试验性访问你自己的页面了,进行测试了，你需要先点击右侧登录，登录你的github账号，然后初始化这篇文章的评论（实际就是在你的issues指定仓库创建一个issue用于提交评论）。
+  
+ ###评论踩坑:joy:
+    * 如果打开你的页面能看到如下内容(这个是中文的，英文的是Comments Not Initialized)  
+      ![notinit](https://jqhgit.github.com/res/zzz/oth/notinit.png)
+      点击登录，填入你的github，如果顺利出现下图，表示你很幸运，基本没出问题-.-
+      ![prepare](https://jqhgit.github.com/res/zzz/oth/prepare.png)
+      * 如果登录过程中出现未找到(Error:Not Found)
+        那可能是你的woner或者repo配置错了，请确保你的repo存在且填写的是正确的仓库名（只需要填写仓库名）
+      * 登录过程结束后跳到别的页面了,或者仍提示未初始化(Error:Comments Not Initialized)
+        请检查oauth app的 Authorization callback URL设置的是否正确
+    * 然后你可以开始点击初始化文章评论按钮（请确保登入的是当前配置的oauth app的github user）
+      * 如果验证失败(Error:validation failed)
+        缺省id的情会使用当前页面的title作为issue名，issue名超过50字符限制会返回这个错误，可以用页面的时间作为id，`id: '<%= page.date %>'`
+        或者改用短一点的title，`title: short title`，这个还是比较简单实现的-.-
+  
+    * 如果都通过了，你应该可以写入一条评论试试了-.- 评论页支持markdown语法。
+  
+### 传送门
++ [github flavored markdown 语法传送门](https://guides.github.com/features/mastering-markdown?_blank)
++ [其它人踩坑历史](https://www.jianshu.com/p/57afa4844aaa)
    
       
    
