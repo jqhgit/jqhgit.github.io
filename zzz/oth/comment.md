@@ -125,16 +125,20 @@ github pages + gitment实现页面评论
       > ![prepare](https://jqhgit.github.io/res/zzz/oth/prepare.png)
       
    1. 如果登录过程中出现未找到(Error:Not Found)
+   
         那可能是你的owner或者repo配置错了，请确保你的repo存在且填写的是正确的仓库名（只需要填写仓库名）
         
    2. 登录过程结束后跳到别的页面了,或者仍提示未初始化(Error:Comments Not Initialized)
+   
         请检查oauth app的 Authorization callback URL设置的是否正确
         
  + 然后你可以开始点击初始化文章评论按钮（请确保登入的是当前配置的oauth app的github user）
  
    1. 如果验证失败(Error:validation failed)
-      缺省id的情会使用当前页面的title作为issue名，issue名超过50字符限制会返回这个错误，可以用页面的时间作为id，`id: '<%= page.date %>'` 或者改用短一点的title，`title: short title`，这个还是比较简单实现的-.-
-  
+ 
+      缺省id的情会使用当前页面的title作为issue名，issue名超过50字符限制会返回这个错误，可以用页面的时间作为id，`id: '<%= page.date %>'` 或者改用短一点的title，`title: short title`，这个还是比较简单实现的。
+      
+              
  + 如果都通过了，你应该可以写入一条评论试试了-.- 评论页支持markdown语法。
   
 四、 传送门
