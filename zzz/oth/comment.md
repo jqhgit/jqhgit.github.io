@@ -44,7 +44,9 @@ github pages + gitment实现页面评论
       > ![Register new app](https://jqhgit.github.io/res/zzz/oth/registeroauth.png) 
       
  + 然后填写注册的内容:
-   
+ 
+    注册时需要输入下图所示的参数：
+    
       > ![Register](https://jqhgit.github.io/res/zzz/oth/registeroauth2.png)
       
    1. **Application name**：随意发挥；
