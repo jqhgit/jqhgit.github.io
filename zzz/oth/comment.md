@@ -113,8 +113,9 @@ github pages + gitment实现页面评论
     ```
    到这一步完成，你可以试验性访问你自己的页面了,进行测试了，你需要先点击右侧登录，登录你的github账号，然后初始化这篇文章的评论（实际就是在你的issues指定仓库创建一个issue用于提交评论）。
   
- 三、 评论踩坑 
- ------------------
+ 三、 评论踩坑
+---------------
+
  + 打开你的页面能看到如下图所示(这个是中文的，英文的是Comments Not Initialized)  
     
       > ![notinit](https://jqhgit.github.io/res/zzz/oth/notinit.png)
@@ -139,6 +140,7 @@ github pages + gitment实现页面评论
 四、 传送门
 ---------------
 + [github flavored markdown 语法传送门](https://guides.github.com/features/mastering-markdown?_blank)
+
 + [其它人踩坑史](https://www.jianshu.com/p/57afa4844aaa)
    
       
