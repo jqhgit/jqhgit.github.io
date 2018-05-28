@@ -1,4 +1,5 @@
-<title>github pages + gitment实现页面评论</title>
+github pages + gitment实现页面评论
+======
 
 ### 说在前面的话 
   + gitment 使用github的oauth app协助认证授权，只允许github登录用户评论 ,评论支持github flavored markdown；
