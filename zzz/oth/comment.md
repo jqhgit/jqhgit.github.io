@@ -1,12 +1,14 @@
 github pages + gitment实现页面评论
 ======
 
-### 说在前面的话 
+一、 说在前面的话 
+----------------
   + gitment 使用github的oauth app协助认证授权，只允许github登录用户评论 ,评论支持github flavored markdown；
   + gitment 采用github issues作为评论，这个有些人认可有些人不认可觉得滥用了，见仁见智吧 -.-
   + 本文旨在记录踩坑史...为像我这样github新手提供点帮助，老手请自觉忽略本文 -.- 
    
-### 实现过程
+二、 实现过程
+---------------
 #### 准备工作 
 ###### 新建自己的仓库，设置github pages: 
    * 新建repository的时候注意，命名尽量和自己的github用户名一致,采用 \[username.github.io\]，比如![img](https://jqhgit.github.com/res/zzz/oth/name.png)
@@ -92,7 +94,8 @@ github pages + gitment实现页面评论
 ```
    到这一步完成，你可以试验性访问你自己的页面了,进行测试了，你需要先点击右侧登录，登录你的github账号，然后初始化这篇文章的评论（实际就是在你的issues指定仓库创建一个issue用于提交评论）。
   
- ### 评论踩坑:joy:
+ 三、 评论踩坑:joy:
+ ------------------
  ###### 如果打开你的页面能看到如下内容(这个是中文的，英文的是Comments Not Initialized)  
     
    ![notinit](https://jqhgit.github.com/res/zzz/oth/notinit.png)
@@ -115,7 +118,8 @@ github pages + gitment实现页面评论
   
  ###### 如果都通过了，你应该可以写入一条评论试试了-.- 评论页支持markdown语法。
   
-### 传送门
+四、 传送门
+---------------
 + [github flavored markdown 语法传送门](https://guides.github.com/features/mastering-markdown?_blank)
 + [其它人踩坑史](https://www.jianshu.com/p/57afa4844aaa)
    
