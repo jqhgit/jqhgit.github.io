@@ -1,4 +1,4 @@
-title: "github pages + gitment实现页面评论"
+<title>github pages + gitment实现页面评论</title>
 
 ### 说在前面的话 
   + gitment 使用github的oauth app协助认证授权，只允许github登录用户评论 ,评论支持github flavored markdown；
@@ -58,7 +58,7 @@ title: "github pages + gitment实现页面评论"
   
    +  由于github md为了安全不支持 `<script>` 标签，但是gitment需要使用，所以最好把gitment相关的内容放在js或者html的页面内，github md是支持       html标签 的 -.- 然后在你需要做评论的html页面的 `<body>` 内部添加如下的代码:
     
-    ```
+```
     <div id="gitmentContainer"></div>
     <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
     <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -74,7 +74,7 @@ title: "github pages + gitment实现页面评论"
       },
     });
     gitment.render('gitmentContainer');
-    ```
+```
     
    + 注意
     id: 是当前页面对应生成issues的名称，缺省状态下是使用当前页面的\[title\]名也就是page.title
@@ -85,10 +85,10 @@ title: "github pages + gitment实现页面评论"
    + 汉化
     上面这个是英文的评论，如果需要中文的话，可以把`<link> <script>`标签替换为:
     
-    ```
+```
     <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
     <script src="https://billts.site/js/gitment.js"></script>     
-    ```
+```
    到这一步完成，你可以试验性访问你自己的页面了,进行测试了，你需要先点击右侧登录，登录你的github账号，然后初始化这篇文章的评论（实际就是在你的issues指定仓库创建一个issue用于提交评论）。
   
  ### 评论踩坑:joy:
