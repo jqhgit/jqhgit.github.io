@@ -138,7 +138,8 @@ github pages + gitment实现页面评论
 + [其它人踩坑史](https://www.jianshu.com/p/57afa4844aaa)
    
       
-<iframe id="myiframe" src="comment_gitment" style="height:700px;width:100%">
+欢迎评论-.- 
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes" id="myiframe" src="comment_gitment" style="height:100%;width:100%">
 </iframe>
    
 
