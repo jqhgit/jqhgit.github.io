@@ -145,17 +145,10 @@ github pages + gitment实现页面评论
       
 欢迎评论 -.- ..  
 {::nomarkdown}
-<html>
-  <body>
-    <div id="gitmentContainer"></div>
+   <div id="gitmentContainer"></div>
    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
    <script src="https://billts.site/js/gitment.js"></script>
-   <!-- <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
-    <script src="./gitment.js"></script>
-  </body>
-
-</html>
+   <script src="../../gitment.js"></script>
 {:/}
 
 
