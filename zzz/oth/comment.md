@@ -144,8 +144,11 @@ github pages + gitment实现页面评论
    
       
 欢迎评论-.- 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes" id="myiframe" src="comment_gitment" style="height:800px;width:100%">
-</iframe>
-   
+{::nomarkdown} 
+ <div id="gitmentContainer"></div>
+ <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+ <script src="https://billts.site/js/gitment.js"></script>
+ <script src="./gitment.js"></script>
+{:/}
 
 
