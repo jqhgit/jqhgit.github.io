@@ -139,7 +139,7 @@ github pages + gitment实现页面评论
    
       
 欢迎评论-.- 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes" id="myiframe" src="comment_gitment" style="height:100%;width:100%">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes" id="myiframe" src="comment_gitment" style="height:800px;width:100%">
 </iframe>
    
 
