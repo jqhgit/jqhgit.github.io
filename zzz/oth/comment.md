@@ -143,7 +143,7 @@ github pages + gitment实现页面评论
 + [其它人踩坑史](https://www.jianshu.com/p/57afa4844aaa)
    
       
-欢迎评论-.- 
+欢迎评论 -.- ..  
 {::nomarkdown}
 <html>
   <body>
