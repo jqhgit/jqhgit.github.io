@@ -136,7 +136,7 @@ github pages + gitment实现页面评论
  
    1. 如果验证失败(Error:validation failed)
  
-      缺省id的情会使用当前页面的title作为issue名，issue名超过50字符限制会返回这个错误，可以用页面的时间作为id，`id: '<%= page.date %>'` 或者改用短一点的title，`title: short title`，这个还是比较简单实现的。
+      缺省id时会使用当前页面的title作为issue名，issue名超过50字符会返回这个错误，可以用页面的时间作为id，`id: '<%= page.date %>'` 或者改用短一点的title，这个还是比较简单实现的。
       
               
  + 如果都通过了，你应该可以写入一条评论试试了-.- 评论页支持markdown语法。
