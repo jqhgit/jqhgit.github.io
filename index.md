@@ -1,23 +1,17 @@
 ### Catalog
 
- + [1.Lanuages](http://jqhgit.github.io)
+ + [1.Lanuages](.)
 
- + [2.Unity 3D](http://jqhgit.github.io)
+ + [2.Unity 3D](.)
 
- + [3.Network](http://jqhgit.github.io)
+ + [3.Network](.)
 
- + [4.Database](http://jqhgit.github.io)
+ + [4.Database](.)
 
- + [5.Artificial Intelligence](http://jqhgit.github.io)
+ + [5.Artificial Intelligence](.)
 
- + [6.Others]()
+ + [6.Others](./sub/oth)
 
-
-[github pages + gitment实现页面评论](https://jqhgit.github.io/zzz/oth/comment)
-
-[go to comment test page](./test)
-
-[go to comment test page 2](./test2)
 
 <!--
 # Welcome to GitHub Pages
