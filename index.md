@@ -10,7 +10,7 @@
 
  + [5.Artificial Intelligence](.)
 
- + [6.Others](./sub/oth)
+ + [6.其 它](./sub/oth)
 
 
 <!--
