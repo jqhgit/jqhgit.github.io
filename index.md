@@ -1,12 +1,12 @@
 ###   目  录
 
- + [1.Lanuages](.)
+ + [1.Lanuages](./)
 
- + [2.Unity 3D](.)
+ + [2.Unity 3D](./)
 
- + [3.Network](.)
+ + [3.Network](./)
 
- + [4.Database](.)
+ + [4.Database](./)
 
  + [5.Artificial Intelligence](.)
 
