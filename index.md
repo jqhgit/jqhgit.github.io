@@ -2,7 +2,7 @@
 
  + [1. Lanuages (0)](./)
 
- + [2. Technology ()](./sub/tec)
+ + [2. Technology (1)](./sub/tec)
 
  + [3. Unity 3D (1)](./)
 

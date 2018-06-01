@@ -1,7 +1,5 @@
 technology
 ==========
-### Technology
-
 memory manage
 -------------
 
