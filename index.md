@@ -10,7 +10,7 @@
 
  + [5. Database (0)](./)
 
- + [6. Artificial Intelligence (0)](./)
+ + [6. Artificial Intelligence (1)](./sub/ai)
 
  + [7. 其 它 (1)](./sub/oth)
 
