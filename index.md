@@ -1,5 +1,7 @@
+<head>
 <link rel="shortcut icon" href="res/icon/favicon.ico"/>
 <link rel="bookmark" href="res/icon/favicon.ico"/>
+</head>
 
 ###   目  录
 
