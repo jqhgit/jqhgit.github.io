@@ -1,3 +1,6 @@
+<link rel="shortcut icon" href="res/icon/favicon.ico"/>
+<link rel="bookmark" href="res/icon/favicon.ico"/>
+
 ###   目  录
 
  + [1. Lanuages (0)](./)
