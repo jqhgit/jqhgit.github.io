@@ -1,7 +1,6 @@
 technology
 ==========
-memory manage
--------------
+## memory manage
 
 + [1. TCMalloc](./tec/tcmalloc)
 
