@@ -2,17 +2,19 @@
 
  + [1. Lanuages (0)](./)
 
- + [2. Technology (1)](./sub/tec)
+ + [2. Operator System (0)](./)
 
- + [3. Unity 3D (1)](./sub/u3d)
+ + [3. Technology (1)](./sub/tec)
 
- + [4. Network (2)](./sub/net)
+ + [4. Unity 3D (1)](./sub/u3d)
 
- + [5. Database (0)](./)
+ + [5. Network (2)](./sub/net)
 
- + [6. Artificial Intelligence (1)](./sub/ai)
+ + [6. Database (0)](./)
 
- + [7. 其 它 (1)](./sub/oth)
+ + [7. Artificial Intelligence (1)](./sub/ai)
+
+ + [8. 其 它 (1)](./sub/oth)
 
 
 <!--
