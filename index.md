@@ -4,7 +4,7 @@
 
  + [2. Operator System (0)](./)
 
- + [3. Technology (1)](./sub/tec)
+ + [3. Technology (2)](./sub/tec)
 
  + [4. Unity 3D (1)](./sub/u3d)
 
