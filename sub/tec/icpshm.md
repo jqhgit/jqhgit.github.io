@@ -29,7 +29,7 @@ WRITE | 可以向该段写入数据
 EXECUTE | 可以执行该段的内容
 SHARED | 该段的内容为多个实例所共享（本质上是关闭了写时复制机制）
 
-  在进行“数据段”属性设置时`#pragma comment(linker, "/SECTION:MySectionName,RWS")`只需要标明大写首字母即可，如`RWS`表示`READ|WRITE\|SHARED`。如上面共享数据段内的属性`g_instance_count`就会在定义了这一数据段的同一个执行文件或DLL多份实例间共享数据。虽然可以很容易的进行简单的数据共享，但是限制较多，可能某些情况下能用的着吧？ :joy: 
+  在进行“数据段”属性设置时`#pragma comment(linker, "/SECTION:MySectionName,RWS")`只需要标明大写首字母即可，如`RWS`表示`READ|WRITE|SHARED`。如上面共享数据段内的属性`g_instance_count`就会在定义了这一数据段的同一个执行文件或DLL多份实例间共享数据。虽然可以很容易的进行简单的数据共享，但是限制较多，可能某些情况下能用的着吧？ :joy: 
 
 然后你就可以用这个属性干点事情比如，在每个进程开启的时候递增1，在进程退出的时候减少1，用于统计当前开启了多少个同类进程 -.-，这只是一个简单实例，demo就在下面。
 
@@ -37,7 +37,7 @@ SHARED | 该段的内容为多个实例所共享（本质上是关闭了写时�
 
 + **demo**
 
-    [传送门 点击直达 share_data](jqhgit.github.io/demo/tec/icpshm);
+    [传送门 点击直达 share_data](https://github.com/jqhgit/jqhgit.github.io/tree/master/demo/tec/icpshm);
     windows下随便创建个控制台程序编译share_data.cpp内的程序，然后运行多个程序就行了，或者直接使用share_data.exe运行（能够正常运行话 -。-）。
 
 + **相关资料**
@@ -55,6 +55,7 @@ SHARED | 该段的内容为多个实例所共享（本质上是关闭了写时�
 + **描述**
   - 限制：
     windows下无法使用，但可以实现无情缘关系进程通信。
+
   - 方法：
     使用shmget、shmat、shmdt、shmctl共享内存函数进行数据共享。
 
@@ -82,7 +83,7 @@ SHARED | 该段的内容为多个实例所共享（本质上是关闭了写时�
     
     再放一次传送门...:
 
-    [传送门 点击直达 share_data](jqhgit.github.io/demo/tec/icpshm)
+    [传送门 点击直达 share_data](https://github.com/jqhgit/jqhgit.github.io/tree/master/demo/tec/icpshm)
 
     你需要在linux下编译一下share_data.cpp，注意执行`dos2unix`进行格式转换，不然你会看到n多错误。然后运行多个程序就能看到效果了（CentOS/RedHat 最好是用多个终端同时运行，不然一个终端后台进程同时输出日志的话比较难受，如果是ubantu...应该没问题），或者直接使用share_data运行。
 
