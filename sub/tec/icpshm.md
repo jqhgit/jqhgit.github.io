@@ -20,16 +20,16 @@ int g_instance_count = 0;
 #pragma comment(linker, "/SECTION:MySectionName,RWS")
 ``` 
 
-注意“数据段”的属性有以下几种，类似Linux下文件的属性
+  注意“数据段”的属性有以下几种，类似Linux下文件的属性
 
-属性 | 意义
----- | ----
-READ | 可以从该段读取数据
-WRITE | 可以向该段写入数据
-EXECUTE | 可以执行该段的内容
-SHARED | 该段的内容为多个实例所共享（本质上是关闭了写时复制机制）
+    属性 | 意义
+    ---- | ----
+    READ | 可以从该段读取数据
+    WRITE | 可以向该段写入数据
+    EXECUTE | 可以执行该段的内容
+    SHARED | 该段的内容为多个实例所共享（本质上是关闭了写时复制机制）
 
-在进行“数据段”属性设置时`#pragma comment(linker, "/SECTION:MySectionName,RWS")`只需要标明大写首字母即可，如RWS表示READ|WRITE|SHARED。如上面共享数据段内的属性`g_instance_count`就会在定义了这一数据段的同一个执行文件或DLL多份实例间共享数据。虽然可以很容易的进行简单的数据共享，但是限制较多，可能某些情况下能用的着吧？ :joy: 
+  在进行“数据段”属性设置时`#pragma comment(linker, "/SECTION:MySectionName,RWS")`只需要标明大写首字母即可，如RWS表示READ|WRITE|SHARED。如上面共享数据段内的属性`g_instance_count`就会在定义了这一数据段的同一个执行文件或DLL多份实例间共享数据。虽然可以很容易的进行简单的数据共享，但是限制较多，可能某些情况下能用的着吧？ :joy: 
 
 然后你就可以用这个属性干点事情比如，在每个进程开启的时候递增1，在进程退出的时候减少1，用于统计当前开启了多少个同类进程 -.-，这只是一个简单实例，demo就在下面。
 
