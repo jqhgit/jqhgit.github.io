@@ -78,30 +78,37 @@ int g_instance_count = 0;
   ```
 
   **hFile**
+
     指定的需要被映射到内存的物理文件句柄，如果指定`INVALID_HANDLE_VALUE`则会**页面文件**上建立一个文件无关的映射。本demo内部就是采用`INVALID_HANDLE_VALUE`来创建一块文件无关的内存映射进行数据共享。
 
   **lpAttributes**
+
     安全设置，一般设置为NULL就行。
 
   **flProtect**
-    对共享文件的保护设置，包括但不限于以下：
+  
+  对共享文件的保护设置，包括但不限于以下：
 
-    属性    |     意义
-    --------------|-------------------------
-    PAGE_READONLY | 以只读方式打开映射
-    PAGE_READWRITE | 以可读、可写方式打开映射
-    PAGE_WRITECOPY | 为写操作留下备份
+  属性    |     意义
+  --------------|--------------
+  PAGE_READONLY | 以只读方式打开映射
+  PAGE_READWRITE | 以可读、可写方式打开映射
+  PAGE_WRITECOPY | 为写操作留下备份
 
   **dwMaximumSizeHigh**
+
     高位文件大小，指定文件映射长度的高32位，32位进程一般用不到，可以设置0。
  
   **dwMaximumSizeLow**
+
     低位文件大小，指定文件映射长度的低32位。也就是待映射文件的大小，在不指定有效物理文件句柄的情况下，需要指定待大小。在指定了有效物理文件句柄而设置为0，则会使用物理文件实际长度。
 
   **lpName**
+
     内存/文件映射的名称也是id，如果已经有一个同名的文件映射函数将会打开它，而不是新建一个文件/内存映射。
 
   **return**
+
     函数将返回创建的文件映射对象句柄，如果失败返回`INVALID_HANDLE_VALUE`。
 
 
@@ -121,9 +128,11 @@ LPVOID WINAPI MapViewOfFile(
 ```
 
 **hFileMappingObject**
+
   文件映射对象句柄,一般情况下传入`CreateFileMapping`返回的句柄即可。
 
 **dwDesiredAccess**
+
   文件映射对象的访问方式,包括但不限于以下：
           
   属性                |     意义
@@ -133,15 +142,19 @@ LPVOID WINAPI MapViewOfFile(
   FILE_MAP_ALL_ACCESS |   `FILE_MAP_WRITE | FILE_MAP_READ`
 
 **dwFileOffsetHigh**
+
   文件映射相相对起始地址的高32位地址偏移量，一般设置为0。
 
 **dwFileOffsetLow**
+
   文件映射相相对起始地址的低32位地址偏移量，根据实际分段偏移量设置。
 
 **dwNumberOfBytesToMap**
+
   文件映射的字节数，函数将会按照设定的地址偏移处映射指定字节数的数据到地址空间。
 
 **return**
+
   返回映射文件指定偏移位置的数据地址，后面可以对数据进行操作了。
 
 另外在使用完内存映射文件后，需要使用UnmapViewOfFile断开文件映射对象到地址空间的映射，或在需要关闭内存映射文件时使用CloseHandle关闭指定的内存映射文件对象。
@@ -172,10 +185,9 @@ LPVOID WINAPI MapViewOfFile(
     2.Linux版本通用。
 
 #### **方法**:
-
   使用shmget、shmat、shmdt、shmctl共享内存函数进行数据共享。
 
-    至于函数原型就借用在百科上扣的图了 -.-，如下：
+  至于函数原型就借用在百科上扣的图了 -.-，如下：
 
   > ![shmget](../../res/tec/icpshm/shmget.png)
 
