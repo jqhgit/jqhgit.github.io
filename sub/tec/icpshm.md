@@ -54,16 +54,16 @@ SHARED | 该段的内容为多个实例所共享（本质上是关闭了写时�
 
 + 描述
 
- - 限制：
- 1.Linux无法使用，仅限于Windows系统；
- 2.操作较为复杂，需编编码控制较多的状态。 
+  - 限制：
+    1.Linux无法使用，仅限于Windows系统；
+    2.操作较为复杂，需编编码控制较多的状态。 
 
- - 优势：
- 1.可以在同机器甚至是局域网及其任意进程间实现数据共享；
+  - 优势：
+    1.可以在同机器甚至是局域网及其任意进程间实现数据共享；
 
- - 方法：
+  - 方法：
  
- 1. 采用windows sdk api ：CreateFileMapping来进行文件/内存映射实现数据共享。CreateFileMapping方法定义如下
+  1. 采用windows sdk api ：CreateFileMapping来进行文件/内存映射实现数据共享。CreateFileMapping方法定义如下
 
     ```C++
     HANDLE CreateFileMapping(
@@ -76,39 +76,41 @@ SHARED | 该段的内容为多个实例所共享（本质上是关闭了写时�
     );
     ```
 
-  **hFile**
+    **hFile**
 
-   指定的需要被映射到内存的物理文件句柄，如果指定`INVALID_HANDLE_VALUE`则会**页面文件**上建立一个文件无关的映射。本demo内部就是采用`INVALID_HANDLE_VALUE`来创建一块文件无关的内存映射进行数据共享。
+    指定的需要被映射到内存的物理文件句柄，如果指定`INVALID_HANDLE_VALUE`则会**页面文件**上建立一个文件无关的映射。本demo内部就是采用`INVALID_HANDLE_VALUE`来创建一块文件无关的内存映射进行数据共享。
 
-  **lpAttributes**
+    **lpAttributes**
 
-  安全设置，一般设置为NULL就行。
+    安全设置，一般设置为NULL就行。
 
-  **flProtect**
+    **flProtect**
 
-  对共享文件的保护设置，包括但不限于以下：
+    对共享文件的保护设置，包括但不限于以下：
 
-  属性    |     意义
-  --------------|-------------------------
-  PAGE_READONLY | 以只读方式打开映射
-  PAGE_READWRITE | 以可读、可写方式打开映射
-  PAGE_WRITECOPY | 为写操作留下备份
+    属性    |     意义
+    --------------|-------------------------
+    PAGE_READONLY | 以只读方式打开映射
+    PAGE_READWRITE | 以可读、可写方式打开映射
+    PAGE_WRITECOPY | 为写操作留下备份
 
-  **dwMaximumSizeHigh**
+    **dwMaximumSizeHigh**
 
-  高位文件大小，指定文件映射长度的高32位，32位进程一般用不到，可以设置0。
+    高位文件大小，指定文件映射长度的高32位，32位进程一般用不到，可以设置0。
+ 
+    **dwMaximumSizeLow**
 
-  **dwMaximumSizeLow**
+    低位文件大小，指定文件映射长度的低32位。也就是待映射文件的大小，在不指定有效物理文件句柄的情况下，需要指定待大小。在指定了有效物理文件句柄而设置为0，则会使用物理文件实际长度。
 
-  低位文件大小，指定文件映射长度的低32位。也就是待映射文件的大小，在不指定有效物理文件句柄的情况下，需要指定待大小。在指定了有效物理文件句柄而设置为0，则会使用物理文件实际长度。
+    **lpName**
 
-  **lpName**
+    内存/文件映射的名称也是id，如果已经有一个同名的文件映射函数将会打开它，而不是新建一个文件/内存映射。
 
-  内存/文件映射的名称也是id，如果已经有一个同名的文件映射函数将会打开它，而不是新建一个文件/内存映射。
+    **return**
 
-  **return**
+    函数将返回创建的文件映射对象句柄，如果失败返回`INVALID_HANDLE_VALUE`。
 
-  函数将返回创建的文件映射对象句柄，如果失败返回`INVALID_HANDLE_VALUE`。
+
 
   2. 使用`MapViewOfFile`函数将文件映射对象映射到当前应用程序的地址空间，通俗的将就是在你的程序里拿到文件映射段的地址。函数原型如下：
   
@@ -130,11 +132,11 @@ SHARED | 该段的内容为多个实例所共享（本质上是关闭了写时�
 
   文件映射对象的访问方式,包括但不限于一下
           
-  属性                |     意义
-  --------------------|-------------------------
-  FILE_MAP_READ       |  可以读取文件.在调用CreateFileMapping时可以传入PAGE_READONLY或PAGE_READWRITE保护属性
-  FILE_MAP_WRITE      |  可以读取文件.在调用CreateFileMapping时可以传入PAGE_READONLY或PAGE_READWRITE保护属性PAGE_READWRITE保护属性
-  FILE_MAP_ALL_ACCESS |   `FILE_MAP_WRITE | FILE_MAP_READ`
+    属性                |     意义
+    --------------------|-------------------------
+    FILE_MAP_READ       |  可以读取文件.在调用CreateFileMapping时可以传入PAGE_READONLY或PAGE_READWRITE保护属性
+    FILE_MAP_WRITE      |  可以读取文件.在调用CreateFileMapping时可以传入PAGE_READONLY或PAGE_READWRITE保护属性PAGE_READWRITE保护属性
+    FILE_MAP_ALL_ACCESS |   `FILE_MAP_WRITE | FILE_MAP_READ`
 
   **dwFileOffsetHigh**
 
@@ -155,16 +157,16 @@ SHARED | 该段的内容为多个实例所共享（本质上是关闭了写时�
   另外在使用完内存映射文件后，需要使用UnmapViewOfFile断开文件映射对象到地址空间的映射，或在需要关闭内存映射文件时使用CloseHandle关闭指定的内存映射文件对象。
 
 
-  - **demo**
+ - **demo**
 
-  [[**demo源码 点击直达**]](https://github.com/jqhgit/jqhgit.github.io/tree/master/demo/tec/icpshm)
+    [[**demo源码 点击直达**]](https://github.com/jqhgit/jqhgit.github.io/tree/master/demo/tec/icpshm)
     
-  源码见：file_mapping.cpp，可以添加到控制台空工程编译即可-.-。
-  或者使用file_mapping.exe直接查看效果。
+    源码见：file_mapping.cpp，可以添加到控制台空工程编译即可-.-。
+    或者使用file_mapping.exe直接查看效果。
 
   - **另外**
 
-  本例仅描述了CreateFileMapping在进程间共享内存的应用，次api函数还有更多更强大的用法。CreateFileMaping+MapViewOfFile常见于使用文件映射来进行大文件的操作，可以有效降低io并节省及其内存。
+    本例仅描述了CreateFileMapping在进程间共享内存的应用，次api函数还有更多更强大的用法。CreateFileMaping+MapViewOfFile常见于使用文件映射来进行大文件的操作，可以有效降低io并节省及其内存。
 
 ## 二、 Linux 进程通信共享内存
 
