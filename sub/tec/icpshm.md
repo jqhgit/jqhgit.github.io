@@ -14,7 +14,7 @@ ICP - Share Memory
     使用简单，只需要简单的定义就能够完成数据的共享。
 
 #### 方法：
-    创建自定义的共享“数据段”，如用一下的方式先定义自定义段的数据，并将自定义段属性设置为共享：
+  创建自定义的共享“数据段”，如用一下的方式先定义自定义段的数据，并将自定义段属性设置为共享：
 
 ```c++
 #pragma data_seg("MySectionName")
@@ -64,7 +64,7 @@ int g_instance_count = 0;
  
 #### **采用windows sdk api ：CreateFileMapping来进行文件/内存映射实现数据共享**
 
-   CreateFileMapping原型如下:
+  CreateFileMapping原型如下:
 
     ```C++
     HANDLE CreateFileMapping(
@@ -77,16 +77,13 @@ int g_instance_count = 0;
     );
     ```
 
-    **hFile**
-
+  **hFile**
     指定的需要被映射到内存的物理文件句柄，如果指定`INVALID_HANDLE_VALUE`则会**页面文件**上建立一个文件无关的映射。本demo内部就是采用`INVALID_HANDLE_VALUE`来创建一块文件无关的内存映射进行数据共享。
 
-    **lpAttributes**
-
+  **lpAttributes**
     安全设置，一般设置为NULL就行。
 
-    **flProtect**
-
+  **flProtect**
     对共享文件的保护设置，包括但不限于以下：
 
     属性    |     意义
@@ -95,20 +92,16 @@ int g_instance_count = 0;
     PAGE_READWRITE | 以可读、可写方式打开映射
     PAGE_WRITECOPY | 为写操作留下备份
 
-    **dwMaximumSizeHigh**
-
+  **dwMaximumSizeHigh**
     高位文件大小，指定文件映射长度的高32位，32位进程一般用不到，可以设置0。
  
-    **dwMaximumSizeLow**
-
+  **dwMaximumSizeLow**
     低位文件大小，指定文件映射长度的低32位。也就是待映射文件的大小，在不指定有效物理文件句柄的情况下，需要指定待大小。在指定了有效物理文件句柄而设置为0，则会使用物理文件实际长度。
 
-    **lpName**
-
+  **lpName**
     内存/文件映射的名称也是id，如果已经有一个同名的文件映射函数将会打开它，而不是新建一个文件/内存映射。
 
-    **return**
-
+  **return**
     函数将返回创建的文件映射对象句柄，如果失败返回`INVALID_HANDLE_VALUE`。
 
 
@@ -127,12 +120,10 @@ int g_instance_count = 0;
 　　);
   ```
 
-  **hFileMappingObject**
-
+**hFileMappingObject**
   文件映射对象句柄,一般情况下传入`CreateFileMapping`返回的句柄即可。
 
-  **dwDesiredAccess**
-
+**dwDesiredAccess**
   文件映射对象的访问方式,包括但不限于一下
           
     属性                |     意义
@@ -141,23 +132,19 @@ int g_instance_count = 0;
     FILE_MAP_WRITE      |  可以读取文件.在调用CreateFileMapping时可以传入PAGE_READONLY或PAGE_READWRITE保护属性PAGE_READWRITE保护属性
     FILE_MAP_ALL_ACCESS |   `FILE_MAP_WRITE | FILE_MAP_READ`
 
-  **dwFileOffsetHigh**
-
+**dwFileOffsetHigh**
   文件映射相相对起始地址的高32位地址偏移量，一般设置为0。
 
-  **dwFileOffsetLow**
-
+**dwFileOffsetLow**
   文件映射相相对起始地址的低32位地址偏移量，根据实际分段偏移量设置。
 
-  **dwNumberOfBytesToMap**
-
+**dwNumberOfBytesToMap**
   文件映射的字节数，函数将会按照设定的地址偏移处映射指定字节数的数据到地址空间。
 
-  **return**
-
+**return**
   返回映射文件指定偏移位置的数据地址，后面可以对数据进行操作了。
 
-  另外在使用完内存映射文件后，需要使用UnmapViewOfFile断开文件映射对象到地址空间的映射，或在需要关闭内存映射文件时使用CloseHandle关闭指定的内存映射文件对象。
+另外在使用完内存映射文件后，需要使用UnmapViewOfFile断开文件映射对象到地址空间的映射，或在需要关闭内存映射文件时使用CloseHandle关闭指定的内存映射文件对象。
 
 
  - **demo**
