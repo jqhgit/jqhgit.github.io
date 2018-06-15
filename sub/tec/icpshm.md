@@ -66,16 +66,16 @@ int g_instance_count = 0;
 
   CreateFileMapping原型如下:
 
-    ```C++
-    HANDLE CreateFileMapping(
-    HANDLE hFile,                       //物理文件句柄
-    LPSECURITY_ATTRIBUTES lpAttributes, //安全设置
-    DWORD flProtect,                    //保护设置
-    DWORD dwMaximumSizeHigh,            //高位文件大小
-    DWORD dwMaximumSizeLow,             //低位文件大小
-    LPCTSTR lpName                      //共享内存名称
-    );
-    ```
+  ```C++
+  HANDLE CreateFileMapping(
+  HANDLE hFile,                       //物理文件句柄
+  LPSECURITY_ATTRIBUTES lpAttributes, //安全设置
+  DWORD flProtect,                    //保护设置
+  DWORD dwMaximumSizeHigh,            //高位文件大小
+  DWORD dwMaximumSizeLow,             //低位文件大小
+  LPCTSTR lpName                      //共享内存名称
+  );
+  ```
 
   **hFile**
     指定的需要被映射到内存的物理文件句柄，如果指定`INVALID_HANDLE_VALUE`则会**页面文件**上建立一个文件无关的映射。本demo内部就是采用`INVALID_HANDLE_VALUE`来创建一块文件无关的内存映射进行数据共享。
@@ -110,27 +110,27 @@ int g_instance_count = 0;
 
 通俗的将就是在你的程序里拿到文件映射段的地址,函数原型如下：
   
-  ```C++
-  LPVOID WINAPI MapViewOfFile(
+```C++
+LPVOID WINAPI MapViewOfFile(
 　　__in HANDLE hFileMappingObject,     //文件映射对象句柄
 　　__in DWORD dwDesiredAccess,         //文件映射对象的访问方式
 　　__in DWORD dwFileOffsetHigh,        //文件映射相相对起始地址的高32位地址偏移量
 　　__in DWORD dwFileOffsetLow,         //文件映射相相对起始地址的低32位地址偏移量
 　　__in SIZE_T dwNumberOfBytesToMap    //文件映射的字节数
 　　);
-  ```
+```
 
 **hFileMappingObject**
   文件映射对象句柄,一般情况下传入`CreateFileMapping`返回的句柄即可。
 
 **dwDesiredAccess**
-  文件映射对象的访问方式,包括但不限于一下
+  文件映射对象的访问方式,包括但不限于以下：
           
-    属性                |     意义
-    --------------------|-------------------------
-    FILE_MAP_READ       |  可以读取文件.在调用CreateFileMapping时可以传入PAGE_READONLY或PAGE_READWRITE保护属性
-    FILE_MAP_WRITE      |  可以读取文件.在调用CreateFileMapping时可以传入PAGE_READONLY或PAGE_READWRITE保护属性PAGE_READWRITE保护属性
-    FILE_MAP_ALL_ACCESS |   `FILE_MAP_WRITE | FILE_MAP_READ`
+  属性                |     意义
+  --------------------|-------------------------
+  FILE_MAP_READ       |  可以读取文件.在调用CreateFileMapping时可以传入PAGE_READONLY或PAGE_READWRITE保护属性
+  FILE_MAP_WRITE      |  可以读取文件.在调用CreateFileMapping时可以传入PAGE_READONLY或PAGE_READWRITE保护属性PAGE_READWRITE保护属性
+  FILE_MAP_ALL_ACCESS |   `FILE_MAP_WRITE | FILE_MAP_READ`
 
 **dwFileOffsetHigh**
   文件映射相相对起始地址的高32位地址偏移量，一般设置为0。
@@ -173,7 +173,7 @@ int g_instance_count = 0;
 
 #### **方法**:
 
-    使用shmget、shmat、shmdt、shmctl共享内存函数进行数据共享。
+  使用shmget、shmat、shmdt、shmctl共享内存函数进行数据共享。
 
     至于函数原型就借用在百科上扣的图了 -.-，如下：
 
@@ -195,7 +195,7 @@ int g_instance_count = 0;
 
 + **demo**
 
-    这个demo和共享数据段类似，就只是共享了一个int数值，用于统计开启了多少个进程，这个数值会在进程开启的时候+1，在进程退出时-1。
+  这个demo和共享数据段类似，就只是共享了一个int数值，用于统计开启了多少个进程，这个数值会在进程开启的时候+1，在进程退出时-1。
     
     再放一次传送门...:
 
