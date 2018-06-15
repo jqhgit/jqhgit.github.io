@@ -63,7 +63,9 @@ SHARED | 该段的内容为多个实例所共享（本质上是关闭了写时�
 
   - 方法：
  
-  1. 采用windows sdk api ：CreateFileMapping来进行文件/内存映射实现数据共享。CreateFileMapping方法定义如下
+1. **采用windows sdk api ：CreateFileMapping来进行文件/内存映射实现数据共享**
+
+   CreateFileMapping原型如下:
 
     ```C++
     HANDLE CreateFileMapping(
@@ -112,7 +114,9 @@ SHARED | 该段的内容为多个实例所共享（本质上是关闭了写时�
 
 
 
-  2. 使用`MapViewOfFile`函数将文件映射对象映射到当前应用程序的地址空间，通俗的将就是在你的程序里拿到文件映射段的地址。函数原型如下：
+2. **使用`MapViewOfFile`函数将文件映射对象映射到当前应用程序的地址空间，通俗的将就是在你的程序里拿到文件映射段的地址**。
+  
+  函数原型如下：
   
   ```C++
   LPVOID WINAPI MapViewOfFile(
